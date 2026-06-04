@@ -1,0 +1,495 @@
+ 
+ 1          OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;
+ 68         
+ 69         /* Projet STA118 - Stations de ski */
+ 70         /* Auteur : Judicha Mamiharilala */
+ 71         
+ 72         /* Question 13 : Importation du fichier ski2.txt */
+ 73         
+ 74         proc import datafile="/home/u64483755/ski2.txt"
+ 75             out=ski
+ 76             dbms=dlm
+ 77             replace;
+ 78             delimiter=";";
+ 79             getnames=yes;
+ 80             guessingrows=max;
+ 81         run;
+ 
+ NOTE: Unable to open parameter catalog: SASUSER.PARMS.PARMS.SLIST in update mode. Temporary parameter values will be saved to 
+ WORK.PARMS.PARMS.SLIST.
+ 82          /**********************************************************************
+ 83          *   PRODUCT:   SAS
+ 84          *   VERSION:   9.4
+ 85          *   CREATOR:   External File Interface
+ 86          *   DATE:      01JUN26
+ 87          *   DESC:      Generated SAS Datastep Code
+ 88          *   TEMPLATE SOURCE:  (None Specified.)
+ 89          ***********************************************************************/
+ 90             data WORK.SKI    ;
+ 91             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+ 92             infile '/home/u64483755/ski2.txt' delimiter = ';' MISSOVER DSD lrecl=32767 firstobs=2 ;
+ 93                informat KIDEN $23. ;
+ 94                informat Altstation best32. ;
+ 95                informat Altsommetdespistes best32. ;
+ 96                informat Kmpistesalpin best32. ;
+ 97                informat Nbvertes best32. ;
+ 98                informat Nbbleues best32. ;
+ 99                informat Nbrouges best32. ;
+ 100               informat Nbnoires best32. ;
+ 101               informat tlpheriques best32. ;
+ 102               informat tlcabines best32. ;
+ 103               informat tlsieges best32. ;
+ 104               informat tlskis best32. ;
+ 105               informat Pxalpin best32. ;
+ 106               informat Kmpistesfond best32. ;
+ 107               informat PXfond best32. ;
+ 108               informat Nblits best32. ;
+ 109               informat bassesaison best32. ;
+ 110               informat hautesaison best32. ;
+ 111               informat Prixappartementbassesaison best32. ;
+ 112               informat Prixappartementhautesaison best32. ;
+ 113               informat Neigeartificielle $14. ;
+ 114               informat SkiFrance $14. ;
+ 115               informat Liaisonsautresstations $11. ;
+ 116               informat Tranchesprixsemaine $12. ;
+ 117               informat "Rapportqualite.prixforfait"N $19. ;
+ 118               informat "Stationfamiliale.enfants"N $13. ;
+ 119               informat Domaineperformant $17. ;
+ 120               informat Grandski $13. ;
+ 121               informat Surf $8. ;
+ 122               informat Stationvillagenature $19. ;
+ 123               informat Grandsitenordique $17. ;
+ 124               informat Activitesnature $15. ;
+ 125               informat Manifestationsculturelles $20. ;
+ 126               informat Animation $13. ;
+ 127               informat Autoroute $16. ;
+ 128               informat sncf $11. ;
+ 129               informat aeroport $15. ;
+ 130               informat Massif $14. ;
+ 131               informat Departement $20. ;
+ 132               format KIDEN $23. ;
+ 133               format Altstation best12. ;
+ 134               format Altsommetdespistes best12. ;
+ 135               format Kmpistesalpin best12. ;
+ 136               format Nbvertes best12. ;
+ 137               format Nbbleues best12. ;
+ 138               format Nbrouges best12. ;
+ 139               format Nbnoires best12. ;
+ 140               format tlpheriques best12. ;
+ 141               format tlcabines best12. ;
+ 142               format tlsieges best12. ;
+ 143               format tlskis best12. ;
+ 144               format Pxalpin best12. ;
+ 145               format Kmpistesfond best12. ;
+ 146               format PXfond best12. ;
+ 147               format Nblits best12. ;
+ 148               format bassesaison best12. ;
+ 149               format hautesaison best12. ;
+ 150               format Prixappartementbassesaison best12. ;
+ 151               format Prixappartementhautesaison best12. ;
+ 152               format Neigeartificielle $14. ;
+ 153               format SkiFrance $14. ;
+ 154               format Liaisonsautresstations $11. ;
+ 155               format Tranchesprixsemaine $12. ;
+ 156               format "Rapportqualite.prixforfait"N $19. ;
+ 157               format "Stationfamiliale.enfants"N $13. ;
+ 158               format Domaineperformant $17. ;
+ 159               format Grandski $13. ;
+ 160               format Surf $8. ;
+ 161               format Stationvillagenature $19. ;
+ 162               format Grandsitenordique $17. ;
+ 163               format Activitesnature $15. ;
+ 164               format Manifestationsculturelles $20. ;
+ 165               format Animation $13. ;
+ 166               format Autoroute $16. ;
+ 167               format sncf $11. ;
+ 168               format aeroport $15. ;
+ 169               format Massif $14. ;
+ 170               format Departement $20. ;
+ 171            input
+ 172                        KIDEN  $
+ 173                        Altstation
+ 174                        Altsommetdespistes
+ 175                        Kmpistesalpin
+ 176                        Nbvertes
+ 177                        Nbbleues
+ 178                        Nbrouges
+ 179                        Nbnoires
+ 180                        tlpheriques
+ 181                        tlcabines
+ 182                        tlsieges
+ 183                        tlskis
+ 184                        Pxalpin
+ 185                        Kmpistesfond
+ 186                        PXfond
+ 187                        Nblits
+ 188                        bassesaison
+ 189                        hautesaison
+ 190                        Prixappartementbassesaison
+ 191                        Prixappartementhautesaison
+ 192                        Neigeartificielle  $
+ 193                        SkiFrance  $
+ 194                        Liaisonsautresstations  $
+ 195                        Tranchesprixsemaine  $
+ 196                        "Rapportqualite.prixforfait"N  $
+ 197                        "Stationfamiliale.enfants"N  $
+ 198                        Domaineperformant  $
+ 199                        Grandski  $
+ 200                        Surf  $
+ 201                        Stationvillagenature  $
+ 202                        Grandsitenordique  $
+ 203                        Activitesnature  $
+ 204                        Manifestationsculturelles  $
+ 205                        Animation  $
+ 206                        Autoroute  $
+ 207                        sncf  $
+ 208                        aeroport  $
+ 209                        Massif  $
+ 210                        Departement  $
+ 211            ;
+ 212            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+ 213            run;
+ 
+ NOTE: The infile '/home/u64483755/ski2.txt' is:
+       Nom du fichier=/home/u64483755/ski2.txt,
+       Nom du propriétaire=u64483755,
+       Nom du groupe=oda,
+       Autorisation d'accès=-rw-r--r--,
+       Modifié(e) le=01 juin 2026 15 h 42,
+       Taille de fichier (octets)=57405
+ 
+ NOTE: 167 records were read from the infile '/home/u64483755/ski2.txt'.
+       The minimum record length was 315.
+       The maximum record length was 369.
+ NOTE: The data set WORK.SKI has 167 observations and 39 variables.
+ NOTE: DATA statement a utilisé (Durée totale du traitement) :
+       real time           0.00 seconds
+       user cpu time       0.01 seconds
+       system cpu time     0.00 seconds
+       memory              9402.62k
+       OS Memory           31776.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        112  Switch Count  2
+       Page Faults                       0
+       Page Reclaims                     174
+       Page Swaps                        0
+       Voluntary Context Switches        13
+       Involuntary Context Switches      0
+       Block Input Operations            0
+       Block Output Operations           280
+       
+ 
+ 167 rows created in WORK.SKI from /home/u64483755/ski2.txt.
+   
+   
+   
+ NOTE: WORK.SKI data set was successfully created.
+ NOTE: The data set WORK.SKI has 167 observations and 39 variables.
+ NOTE: PROCEDURE IMPORT a utilisé (Durée totale du traitement) :
+       real time           0.21 seconds
+       user cpu time       0.19 seconds
+       system cpu time     0.01 seconds
+       memory              9402.62k
+       OS Memory           32036.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        112  Switch Count  10
+       Page Faults                       0
+       Page Reclaims                     2640
+       Page Swaps                        0
+       Voluntary Context Switches        88
+       Involuntary Context Switches      8
+       Block Input Operations            0
+       Block Output Operations           336
+       
+ 
+ 214        
+ 215        proc contents data=ski;
+ 216        run;
+ 
+ NOTE: PROCEDURE CONTENTS a utilisé (Durée totale du traitement) :
+       real time           0.04 seconds
+       user cpu time       0.04 seconds
+       system cpu time     0.00 seconds
+       memory              1889.18k
+       OS Memory           27056.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        113  Switch Count  0
+       Page Faults                       0
+       Page Reclaims                     157
+       Page Swaps                        0
+       Voluntary Context Switches        3
+       Involuntary Context Switches      2
+       Block Input Operations            0
+       Block Output Operations           32
+       
+ 
+ 217        
+ 218        proc print data=ski(obs=10);
+ 219        run;
+ 
+ NOTE: There were 10 observations read from the data set WORK.SKI.
+ NOTE: PROCEDURE PRINT a utilisé (Durée totale du traitement) :
+       real time           0.04 seconds
+       user cpu time       0.05 seconds
+       system cpu time     0.00 seconds
+       memory              954.65k
+       OS Memory           26796.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        114  Switch Count  0
+       Page Faults                       0
+       Page Reclaims                     93
+       Page Swaps                        0
+       Voluntary Context Switches        0
+       Involuntary Context Switches      0
+       Block Input Operations            0
+       Block Output Operations           32
+       
+ 
+ 220        
+ 221        /* Question 14 : Moyenne, minimum et maximum des altitudes par massif */
+ 222        
+ 223        proc means data=ski mean min max maxdec=2;
+ 224            class Massif;
+ 225            var Altstation Altsommetdespistes;
+ 226        run;
+ 
+ NOTE: There were 167 observations read from the data set WORK.SKI.
+ NOTE: PROCEDURE MEANS a utilisé (Durée totale du traitement) :
+       real time           0.03 seconds
+       user cpu time       0.03 seconds
+       system cpu time     0.00 seconds
+       memory              7750.17k
+       OS Memory           32704.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        115  Switch Count  1
+       Page Faults                       0
+       Page Reclaims                     1622
+       Page Swaps                        0
+       Voluntary Context Switches        18
+       Involuntary Context Switches      1
+       Block Input Operations            0
+       Block Output Operations           16
+       
+ 
+ 227        
+ 228        /* Question 15 : Extraction du code département */
+ 229        
+ 230        data ski;
+ 231            set ski;
+ 232            CodeDept = scan(Departement, 2, '()');
+ 233        run;
+ 
+ NOTE: There were 167 observations read from the data set WORK.SKI.
+ NOTE: The data set WORK.SKI has 167 observations and 40 variables.
+ NOTE: DATA statement a utilisé (Durée totale du traitement) :
+       real time           0.00 seconds
+       user cpu time       0.00 seconds
+       system cpu time     0.00 seconds
+       memory              1054.71k
+       OS Memory           27312.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        116  Switch Count  2
+       Page Faults                       0
+       Page Reclaims                     101
+       Page Swaps                        0
+       Voluntary Context Switches        12
+       Involuntary Context Switches      0
+       Block Input Operations            0
+       Block Output Operations           264
+       
+ 
+ 234        
+ 235        proc print data=ski(obs=10);
+ 236            var KIDEN Departement CodeDept;
+ 237        run;
+ 
+ NOTE: There were 10 observations read from the data set WORK.SKI.
+ NOTE: PROCEDURE PRINT a utilisé (Durée totale du traitement) :
+       real time           0.00 seconds
+       user cpu time       0.01 seconds
+       system cpu time     0.00 seconds
+       memory              685.40k
+       OS Memory           27052.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        117  Switch Count  0
+       Page Faults                       0
+       Page Reclaims                     61
+       Page Swaps                        0
+       Voluntary Context Switches        0
+       Involuntary Context Switches      0
+       Block Input Operations            0
+       Block Output Operations           0
+       
+ 
+ 238        
+ 239        /* Question 16 : Suppression de la chaîne "q-p" */
+ 240        
+ 241        data ski;
+ 242            set ski;
+ 243            Rapport_sans_qp = tranwrd('Rapportqualite.prixforfait'n, "q-p", "");
+ 244        run;
+ 
+ NOTE: There were 167 observations read from the data set WORK.SKI.
+ NOTE: The data set WORK.SKI has 167 observations and 41 variables.
+ NOTE: DATA statement a utilisé (Durée totale du traitement) :
+       real time           0.00 seconds
+       user cpu time       0.00 seconds
+       system cpu time     0.01 seconds
+       memory              1067.96k
+       OS Memory           27312.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        118  Switch Count  2
+       Page Faults                       0
+       Page Reclaims                     92
+       Page Swaps                        0
+       Voluntary Context Switches        15
+       Involuntary Context Switches      0
+       Block Input Operations            0
+       Block Output Operations           272
+       
+ 
+ 245        
+ 246        proc print data=ski(obs=10);
+ 247            var KIDEN 'Rapportqualite.prixforfait'n Rapport_sans_qp;
+ 248        run;
+ 
+ NOTE: There were 10 observations read from the data set WORK.SKI.
+ NOTE: PROCEDURE PRINT a utilisé (Durée totale du traitement) :
+       real time           0.01 seconds
+       user cpu time       0.01 seconds
+       system cpu time     0.00 seconds
+       memory              656.28k
+       OS Memory           27052.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        119  Switch Count  0
+       Page Faults                       0
+       Page Reclaims                     62
+       Page Swaps                        0
+       Voluntary Context Switches        0
+       Involuntary Context Switches      1
+       Block Input Operations            0
+       Block Output Operations           0
+       
+ 
+ 249        
+ 250        /* Question 17 : Analyse en Composantes Principales */
+ 251        
+ 252        proc princomp data=ski
+ 253            out=coord_acp
+ 254            plots=none;
+ 255            var Altstation Altsommetdespistes Kmpistesalpin
+ 256                Nbvertes Nbbleues Nbrouges Nbnoires
+ 257                tlpheriques tlcabines tlsieges tlskis
+ 258                Pxalpin Kmpistesfond PXfond Nblits
+ 259                bassesaison hautesaison
+ 260                Prixappartementbassesaison Prixappartementhautesaison;
+ 261        run;
+ 
+ NOTE: The data set WORK.COORD_ACP has 167 observations and 60 variables.
+ NOTE: PROCEDURE PRINCOMP a utilisé (Durée totale du traitement) :
+       real time           0.12 seconds
+       user cpu time       0.12 seconds
+       system cpu time     0.00 seconds
+       memory              1681.06k
+       OS Memory           27572.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        120  Switch Count  2
+       Page Faults                       0
+       Page Reclaims                     138
+       Page Swaps                        0
+       Voluntary Context Switches        17
+       Involuntary Context Switches      4
+       Block Input Operations            0
+       Block Output Operations           608
+       
+ 
+ 262        
+ 263        /* Question 17 : Analyse en Composantes Principales */
+ 264        
+ 265        proc princomp data=ski
+ 266            out=coord_acp
+ 267            plots=none;
+ 268            var Altstation Altsommetdespistes Kmpistesalpin
+ 269                Nbvertes Nbbleues Nbrouges Nbnoires
+ 270                tlpheriques tlcabines tlsieges tlskis
+ 271                Pxalpin Kmpistesfond PXfond Nblits
+ 272                bassesaison hautesaison
+ 273                Prixappartementbassesaison Prixappartementhautesaison;
+ 274        run;
+ 
+ NOTE: The data set WORK.COORD_ACP has 167 observations and 60 variables.
+ NOTE: PROCEDURE PRINCOMP a utilisé (Durée totale du traitement) :
+       real time           0.12 seconds
+       user cpu time       0.12 seconds
+       system cpu time     0.00 seconds
+       memory              1586.21k
+       OS Memory           27572.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        121  Switch Count  2
+       Page Faults                       0
+       Page Reclaims                     121
+       Page Swaps                        0
+       Voluntary Context Switches        19
+       Involuntary Context Switches      2
+       Block Input Operations            0
+       Block Output Operations           624
+       
+ 
+ 275        
+ 276        /* Vérification de la table des coordonnées ACP */
+ 277        
+ 278        proc print data=coord_acp(obs=10);
+ 279            var KIDEN Prin1 Prin2;
+ 280        run;
+ 
+ NOTE: There were 10 observations read from the data set WORK.COORD_ACP.
+ NOTE: PROCEDURE PRINT a utilisé (Durée totale du traitement) :
+       real time           0.01 seconds
+       user cpu time       0.01 seconds
+       system cpu time     0.00 seconds
+       memory              773.37k
+       OS Memory           27052.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        122  Switch Count  0
+       Page Faults                       0
+       Page Reclaims                     61
+       Page Swaps                        0
+       Voluntary Context Switches        0
+       Involuntary Context Switches      0
+       Block Input Operations            0
+       Block Output Operations           0
+       
+ 
+ 281        
+ 282        /* Question 17b : Représentation des stations sur les deux premières composantes */
+ 283        
+ 284        proc sgplot data=coord_acp;
+ 285            scatter x=Prin1 y=Prin2 / datalabel=KIDEN;
+ 286            xaxis label="Composante principale 1";
+ 287            yaxis label="Composante principale 2";
+ 288            title "Projection des stations sur les deux premières composantes";
+ 289        run;
+ 
+ NOTE: PROCEDURE SGPLOT a utilisé (Durée totale du traitement) :
+       real time           0.15 seconds
+       user cpu time       0.06 seconds
+       system cpu time     0.01 seconds
+       memory              9142.56k
+       OS Memory           34732.00k
+       Timestamp           01/06/2026 02:11:02 PM
+       Step Count                        123  Switch Count  2
+       Page Faults                       0
+       Page Reclaims                     2149
+       Page Swaps                        0
+       Voluntary Context Switches        662
+       Involuntary Context Switches      5
+       Block Input Operations            0
+       Block Output Operations           688
+       
+ NOTE: There were 167 observations read from the data set WORK.COORD_ACP.
+ 
+ 290        
+ 291        
+ 292        
+ 293        OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;
+ 303        
